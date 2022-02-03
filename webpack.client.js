@@ -40,6 +40,12 @@ const getConfig = (target) => ({
         ]
     },
 
+    // devServer: {
+    //     client: {
+    //         logging: 'info',
+    //     }
+    // },
+
     resolve: {
         extensions: ['.js', '.jsx'],
         alias: {
@@ -51,7 +57,7 @@ const getConfig = (target) => ({
 
     plugins: 
         target === "web"
-            ? [new LoadablePlugin(), new MiniCssExtractPlugin(), new webpack.HotModuleReplacementPlugin()]
+            ? [new LoadablePlugin(), new webpack.HotModuleReplacementPlugin(), new MiniCssExtractPlugin(), ]
             : [new LoadablePlugin(), new MiniCssExtractPlugin()],
     
     externals: target === "node" ? ['@loadable/component', nodeExternals()] : undefined

@@ -22,6 +22,21 @@ module.exports = (api) => {
                 },
             ],
         ],
-        plugins: ['@loadable/babel-plugin'],
+        plugins: [
+            '@loadable/babel-plugin',
+            [
+                'module-resolver',
+                {
+                    root: ['.'],
+                    extensions: ['.js', '.jsx'],
+                    alias: {
+                        '@src': './src',
+                        '@components': './src/components',
+                        '@pages': './src/pages',
+                        '@util': './src/util',
+                    }
+                }
+            ]
+        ],
     }
 }

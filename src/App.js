@@ -1,27 +1,23 @@
-// import logo from './logo.svg';
 import React from 'react';
+import {Switch, Route} from 'react-router-dom';
+import loadable from '@loadable/component';
 import './App.css';
+
+const HomePage = loadable(() => import('./pages/Home'));
+const SigninPage = loadable(() => import('./pages/Signin'));
+const SignupPage = loadable(() => import('./pages/Signup'));
+
 function App() {
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     {/* <img src={logo} className="App-logo" alt="logo" /> */}
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
     <>
     <div>react-pure-ssr-component</div>
-
+    <Switch>
+      
+        <Route exact path="/" render={() => <HomePage/>}/>
+        <Route path="/signin" render={() => <SigninPage/>}/>
+        <Route path="/signup" render={() => <SignupPage/>}/>
+      
+    </Switch>
     </>
   );
 }

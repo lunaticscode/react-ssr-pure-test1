@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {loadableReady} from '@loadable/component'
-
+import {BrowserRouter as Router} from 'react-router-dom';
 // ReactDOM.render(
 //   <React.StrictMode>
 //     <App />
@@ -15,7 +15,15 @@ import {loadableReady} from '@loadable/component'
 
 loadableReady(() => {
   const rootElement = document.getElementById("root");
-  hydrate( <App/>, rootElement )
+  hydrate( 
+    
+    <Router>
+      <App/>
+    </Router>
+    
+  , 
+  rootElement 
+  )
 })
 
 

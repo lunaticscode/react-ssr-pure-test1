@@ -21,7 +21,6 @@ module.exports = (api) => {
                     modules: webpack ? false : 'commonjs',
                 },
             ],
-            
         ],
         plugins: ['@loadable/babel-plugin'],
     }

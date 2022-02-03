@@ -1,7 +1,9 @@
 # Getting Started with Create React App
 
-React-SSR without Framework.
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+CRA-SSR (Without Framework.)
+
+1. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+2. Add this library [Loadable-Component](https://loadable-components.com/docs/server-side-rendering/).
 
 ## Available Scripts
 

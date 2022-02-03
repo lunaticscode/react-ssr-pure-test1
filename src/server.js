@@ -6,6 +6,7 @@ import {StaticRouter} from 'react-router-dom';
 import {Helmet} from 'react-helmet';
 import {ChunkExtractor} from '@loadable/server';
 
+const {testFormat1} = require('./ssr_format_html');
 const app = express(); 
 const PORT = 6066;
 
@@ -51,22 +52,7 @@ app.get('*', (req, res) => {
     const helmet = Helmet.renderStatic();
     
     res.set('content-type', 'text/html');
-    res.send(`
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta name="viewport" content="width=device-width, user-scalable=no">
-            <meta name="google" content="notranslate">
-            ${helmet.title.toString()}
-            ${webExtractor.getLinkTags()}
-            ${webExtractor.getStyleTags()}
-        </head>
-        <body>
-            <div id="root">${html}</div>
-            ${webExtractor.getScriptTags()}
-        </body>
-        </html>
-    `)
+    res.send(testFormat1(helmet, webExtractor, html));
 })
 
 app.listen( PORT, () => {

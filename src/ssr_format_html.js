@@ -17,11 +17,6 @@ const testFormat1 = (helmet, webExtractor, html) => {
     `
 }
 
-const testFormat2 = () => {
-    
-}
-
-
 module.exports = {
     testFormat1,
 }
